@@ -4,7 +4,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
-    <string name="buttonPlusMinus">+ -</string>
+    <string name="buttonPlusMinus" translatable="false">+ -</string>
     <string name="buttonMPlus">M+</string>
     <string name="buttonMR">MR</string>
     <string name="buttonMC">MC</string>
@@ -22,10 +22,10 @@
     <string name="buttonPlus">+</string>
     <string name="buttonMinus">-</string>
     <string name="buttonDivide">/</string>
-    <string name="buttonMultiply">*</string>
+    <string name="buttonMultiply">X</string>
     <string name="buttonEdit">Del</string>
     <string name="buttonEquals">=</string>
-    <string name="buttonClear">C</string>
+    <string name="buttonClear">AC</string>
     <string name="buttonPercent">%</string>
 
 </resources>

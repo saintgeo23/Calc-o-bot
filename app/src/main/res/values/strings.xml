@@ -27,5 +27,6 @@
     <string name="buttonEquals">=</string>
     <string name="buttonClear">AC</string>
     <string name="buttonPercent">%</string>
+    <string name="divisionZero">Do not divide by Zero!\nEnter new value</string>
 
 </resources>

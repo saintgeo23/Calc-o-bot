@@ -26,7 +26,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1.00"
             android:text="@string/button7"
-            android:id="@+id/button7" />
+            android:id="@+id/button7"
+            android:onClick="buttonClick"
+            android:contentDescription="7" />
 
         <Button
             style="?android:attr/buttonStyle"
@@ -34,7 +36,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1.00"
             android:text="@string/button8"
-            android:id="@+id/button8" />
+            android:id="@+id/button8"
+            android:onClick="buttonClick"
+            android:contentDescription="8" />
 
         <Button
             style="?android:attr/buttonStyle"
@@ -42,7 +46,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1.00"
             android:text="@string/button9"
-            android:id="@+id/button9" />
+            android:id="@+id/button9"
+            android:onClick="buttonClick"
+            android:contentDescription="9" />
 
         <Button
             style="?android:attr/buttonStyle"
@@ -50,7 +56,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1.00"
             android:text="@string/buttonClear"
-            android:id="@+id/buttonClear" />
+            android:id="@+id/buttonClear"
+            android:onClick="buttonClick" />
 
     </LinearLayout>
 
@@ -65,7 +72,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1.00"
             android:text="@string/button4"
-            android:id="@+id/button4" />
+            android:id="@+id/button4"
+            android:onClick="buttonClick"
+            android:contentDescription="4" />
 
         <Button
             style="?android:attr/buttonStyle"
@@ -73,7 +82,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1.00"
             android:text="@string/button5"
-            android:id="@+id/button5" />
+            android:id="@+id/button5"
+            android:onClick="buttonClick"
+            android:contentDescription="5" />
 
         <Button
             style="?android:attr/buttonStyle"
@@ -81,7 +92,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1.00"
             android:text="@string/button6"
-            android:id="@+id/button6" />
+            android:id="@+id/button6"
+            android:onClick="buttonClick"
+            android:contentDescription="6" />
 
         <Button
             style="?android:attr/buttonStyle"
@@ -89,7 +102,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1.00"
             android:text="@string/buttonMinus"
-            android:id="@+id/buttonSubtract" />
+            android:id="@+id/buttonSubtract"
+            android:onClick="buttonClick" />
 
     </LinearLayout>
 
@@ -104,7 +118,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1.00"
             android:text="@string/button1"
-            android:id="@+id/button1" />
+            android:id="@+id/button1"
+            android:onClick="buttonClick"
+            android:contentDescription="1"
+            android:elegantTextHeight="false" />
 
         <Button
             style="?android:attr/buttonStyle"
@@ -112,7 +129,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1.00"
             android:text="@string/button2"
-            android:id="@+id/button2" />
+            android:id="@+id/button2"
+            android:onClick="buttonClick"
+            android:contentDescription="2" />
 
         <Button
             style="?android:attr/buttonStyle"
@@ -120,7 +139,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1.00"
             android:text="@string/button3"
-            android:id="@+id/button3" />
+            android:id="@+id/button3"
+            android:onClick="buttonClick"
+            android:contentDescription="3" />
 
         <Button
             style="?android:attr/buttonStyle"
@@ -128,7 +149,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1.00"
             android:text="@string/buttonMultiply"
-            android:id="@+id/buttonMultiply" />
+            android:id="@+id/buttonMultiply"
+            android:onClick="buttonClick" />
 
     </LinearLayout>
 
@@ -157,7 +179,9 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1.00"
                     android:text="@string/buttonComma"
-                    android:id="@+id/buttonComma" />
+                    android:id="@+id/buttonComma"
+                    android:onClick="buttonClick"
+                    android:contentDescription="," />
 
                 <Button
                     style="?android:attr/buttonStyle"
@@ -165,7 +189,9 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1.00"
                     android:text="@string/button0"
-                    android:id="@+id/button0" />
+                    android:id="@+id/button0"
+                    android:onClick="buttonClick"
+                    android:contentDescription="0" />
 
             </LinearLayout>
 
@@ -178,7 +204,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/buttonEquals"
-                    android:id="@+id/buttonEquals"/>
+                    android:id="@+id/buttonEquals"
+                    android:onClick="buttonClick" />
             </LinearLayout>
 
         <!-- Right sector (+, /, %) -->
@@ -201,7 +228,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/buttonPlus"
-                    android:id="@+id/buttonAdd" />
+                    android:id="@+id/buttonAdd"
+                    android:onClick="buttonClick" />
 
             </LinearLayout>
 
@@ -217,7 +245,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="@string/buttonDivide"
-                    android:id="@+id/buttonDivide" />
+                    android:id="@+id/buttonDivide"
+                    android:onClick="buttonClick" />
 
                 <Button
                     style="?android:attr/buttonStyle"
@@ -225,7 +254,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="@string/buttonPercent"
-                    android:id="@+id/buttonPercent" />
+                    android:id="@+id/buttonPercent"
+                    android:onClick="buttonClick" />
 
             </LinearLayout>
 

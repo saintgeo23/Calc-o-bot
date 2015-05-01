@@ -5,13 +5,12 @@
     <style name="AppTheme" parent="BlueGray_DeepOrange_Theme">
         <!-- Customize your theme here. -->
     </style>
-    
+
     <style name="BlueGray_DeepOrange_Theme" parent="Theme.AppCompat.Light">
 
         <item name="colorPrimary">@color/blueGray</item>
         <item name="colorPrimaryDark">@color/darkBlueGray</item>
-        <item name="colorAccent">@color/deepOrange</item>
+        <item name="android:colorAccent">@color/deepOrange</item>
 
     </style>
-
 </resources>

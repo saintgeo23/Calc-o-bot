@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
 
     private EnumMap<Symbol, Object> commands = new EnumMap<Symbol, Object>(Symbol.class);
 
-    private ActionType lastAction;
+    private ActionType lastAction = ActionType.CLEAR;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,30 +116,33 @@ public class MainActivity extends Activity {
 
             case R.id.buttonPercent: {
 
-                if (!commands.containsKey(Symbol.OPERATION)) {
-                    commands.put(Symbol.OPERATION, operType);
-                } else if (commands.get(Symbol.OPERATION).equals(OperationType.ADD)) {
-                    commands.put(Symbol.SECOND_DIGIT, display.getText());
-                    double result = CalcOps.percentAdd(getDouble(commands.get(Symbol.FIRST_DIGIT)), getDouble(commands.get(Symbol.SECOND_DIGIT)));
 
-                    if (result % 1 == 0) {
-                        display.setText(String.valueOf((int)result));
-                    } else {
-                        display.setText(String.valueOf(result));
+                if ((!commands.containsKey(Symbol.OPERATION)) && (lastAction == ActionType.DIGIT || lastAction == ActionType.CLEAR || lastAction == ActionType.RESULT)) {
+                    if (!commands.containsKey(Symbol.FIRST_DIGIT)) {
+                        commands.put(Symbol.FIRST_DIGIT, display.getText());
                     }
+                    commands.put(Symbol.OPERATION, OperationType.PERCENT);
+                    lastAction = ActionType.OPERATION;
 
-                } else if (commands.get(Symbol.OPERATION).equals(OperationType.SUBTRACT)) {
+                } else if (commands.containsKey(Symbol.OPERATION) && commands.get(Symbol.OPERATION).equals(OperationType.ADD)) {
                     commands.put(Symbol.SECOND_DIGIT, display.getText());
-                    double result = CalcOps.percentSub(getDouble(commands.get(Symbol.FIRST_DIGIT)), getDouble(commands.get(Symbol.SECOND_DIGIT)));
+                    commands.put(Symbol.OPERATION, OperationType.PERCENTADD);
+                    doCalc();
 
-                    if (result % 1 == 0) {
-                        display.setText(String.valueOf((int)result));
-                    } else {
-                        display.setText(String.valueOf(result));
-                    }
+                    lastAction = ActionType.RESULT;
+                    commands.clear();
 
-                }
-                lastAction = ActionType.OPERATION;
+                } else if (commands.containsKey(Symbol.OPERATION) && commands.get(Symbol.OPERATION).equals(OperationType.SUBTRACT)) {
+                    commands.put(Symbol.SECOND_DIGIT, display.getText());
+                    commands.put(Symbol.OPERATION, OperationType.PERCENTSUB);
+                    doCalc();
+
+                    lastAction = ActionType.RESULT;
+                    commands.clear();
+
+                } else return;
+                break;
+
             }
 
             case R.id.buttonClear: {
@@ -159,7 +162,6 @@ public class MainActivity extends Activity {
 
                     commands.put(Symbol.SECOND_DIGIT, display.getText());
                     doCalc();
-                    commands.put(Symbol.OPERATION, operType);
 
                     commands.clear();
 
@@ -184,6 +186,7 @@ public class MainActivity extends Activity {
 
             }
 
+
             default: {
 
                 if (display.getText().toString().equals("0") || (commands.containsKey(Symbol.FIRST_DIGIT) && getDouble(display.getText()) == getDouble(commands.get(Symbol.FIRST_DIGIT))) || lastAction == ActionType.RESULT) {
@@ -203,7 +206,7 @@ public class MainActivity extends Activity {
 
         OperationType opTypeTmp = (OperationType) commands.get(Symbol.OPERATION);
 
-        double result = 0;
+        double result;
 
         try {
             result = calc(opTypeTmp,
@@ -262,6 +265,12 @@ public class MainActivity extends Activity {
             }
             case PERCENT: {
                 return CalcOps.percent(a, b);
+            }
+            case PERCENTADD: {
+                return CalcOps.percentAdd(a, b);
+            }
+            case PERCENTSUB: {
+                return CalcOps.percentSub(a, b);
             }
 
 
